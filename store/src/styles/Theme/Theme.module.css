@@ -1,0 +1,30 @@
+:root {
+  --accent: #d66464;
+  --accent-opacity: rgba(250, 117, 117, 0.5);
+  --text-main: #252525;
+  --main-font: "poppins";
+}
+
+.accentBg {
+  background-color: var(--accent);
+}
+
+.accentBgOpacity {
+  background-color: var(--accent-opacity);
+}
+
+.textMain {
+  color: var(--text-main);
+}
+
+.textAccent {
+  color: var(--accent);
+}
+
+.textAccentOpacity {
+  color: var(--accent-opacity);
+}
+
+.mainFont {
+  font-family: var(--main-font);
+}
