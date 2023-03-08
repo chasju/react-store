@@ -1,0 +1,26 @@
+@import url(./Theme/Theme.module.css);
+
+form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.3rem 1rem;
+  padding-left: 2.5rem;
+  border: none;
+  border-bottom: 1px solid var(--text-main);
+  font-size: 1.2rem;
+}
+
+input::placeholder {
+  font-family: var(--main-font), sans-serif;
+}
+
+i {
+  position: absolute;
+  left: 1px;
+  font-size: 1.3rem;
+}
