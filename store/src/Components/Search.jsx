@@ -1,4 +1,4 @@
-import "../styles/Search.module.css";
+import styles from "../styles/Search.module.css";
 
 export default function Search() {
   return (
