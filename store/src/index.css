@@ -1,5 +1,11 @@
 @import url(./styles/Theme/Theme.module.css);
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: var(--main-font), sans-serif;

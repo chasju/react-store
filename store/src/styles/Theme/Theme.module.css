@@ -28,3 +28,8 @@
 .mainFont {
   font-family: var(--main-font);
 }
+
+.bodyContainer {
+  width: 90%;
+  margin: auto;
+}
