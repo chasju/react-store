@@ -1,0 +1,53 @@
+@import url(../styles/Theme/Theme.module.css);
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.cardContainer {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 300px) {
+  .cardContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .cardContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  width: 100%;
+}
+
+.card img {
+  width: 100%;
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.title,
+.price {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 0;
+}
+
+.heart {
+  font-size: 1.3rem;
+  color: var(--accent);
+  cursor: pointer;
+}

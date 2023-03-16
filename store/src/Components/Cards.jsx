@@ -1,4 +1,4 @@
-import styles from "../styles/Card.module.css";
+import styles from "../styles/Cards.module.css";
 import errorStyles from "../styles/ErrorMessage.module.css";
 import loaderStyles from "../styles/Loader.module.css";
 import useApi from "../API/useApi";
