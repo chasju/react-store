@@ -3,7 +3,7 @@ import errorStyles from "../styles/ErrorMessage.module.css";
 import loaderStyles from "../styles/Loader.module.css";
 import useApi from "../API/useApi";
 import { Link } from "react-router-dom";
-import ToggleHeart from "./ToggleHeart";
+import HandleLike from "./HandleLike";
 
 export default function Cards() {
   const { posts, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
@@ -29,7 +29,7 @@ export default function Cards() {
             <Link to={`product/${post.id}`}>
               <h2 className={styles.title}>{post.title}</h2>
             </Link>
-            <i onClick={ToggleHeart} className={`${styles.heart} fa-regular fa-heart`}></i>
+            <HandleLike />
           </div>
 
           <p className={styles.price}>{post.discountedPrice} NOK</p>

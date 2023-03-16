@@ -5,7 +5,6 @@ import errorStyles from "../styles/ErrorMessage.module.css";
 import loaderStyles from "../styles/Loader.module.css";
 import useApiWithId from "../API/useApiWithId";
 import { Link, useParams } from "react-router-dom";
-import ToggleHeart from "./ToggleHeart";
 import image from "../images/placeholder.jpg";
 
 export default function Card() {
@@ -41,7 +40,6 @@ export default function Card() {
       </div>
       <div>
         <button>Add to Cart</button>
-        <i onClick={ToggleHeart} className={`${heartStyle.heart} fa-regular fa-heart`}></i>
       </div>
       <p>Reviews</p>
       <h2>Description</h2>
