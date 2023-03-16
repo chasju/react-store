@@ -9,7 +9,9 @@ export default function Home() {
         <Search />
       </div>
       <h1>Products</h1>
-      <div>Filter</div>
+      <div className={Styles.filterButtonContainer}>
+        <button className={Styles.filterButton}>Filter</button>
+      </div>
       <Cards />
     </div>
   );
