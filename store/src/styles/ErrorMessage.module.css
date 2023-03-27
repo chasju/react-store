@@ -1,0 +1,10 @@
+.errorContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+.errorMessage {
+  background-color: var(--accent-opacity);
+  padding: 2rem;
+  text-align: center;
+}

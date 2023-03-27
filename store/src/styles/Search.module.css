@@ -19,7 +19,7 @@ input::placeholder {
   font-family: var(--main-font), sans-serif;
 }
 
-i {
+.searchIcon {
   position: absolute;
   left: 1px;
   font-size: 1.3rem;
