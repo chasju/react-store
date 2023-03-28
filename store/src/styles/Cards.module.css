@@ -31,6 +31,21 @@ a {
 .card img {
   width: 100%;
 }
+.imageContainer {
+  position: relative;
+}
+
+.banner {
+  background-color: var(--accent);
+  width: max-content;
+  padding: 0.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.7rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 .flexBetween {
   display: flex;
@@ -40,10 +55,15 @@ a {
 }
 
 .title,
-.price {
+.price,
+.oldPrice {
   font-size: 1em;
   font-weight: 100;
   margin: 0;
+}
+
+.oldPrice {
+  text-decoration: line-through;
 }
 
 .heart {
