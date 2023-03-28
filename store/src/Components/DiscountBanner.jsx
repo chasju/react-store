@@ -5,7 +5,5 @@ export default function Banner(props) {
 
   const discount = calc.toFixed(0);
 
-  console.log(discount);
-
   return <div className={props.oldPrice > props.discountedPrice ? `${styles.banner}` : ""}>{props.oldPrice > props.discountedPrice ? `${discount}%` : ""}</div>;
 }
