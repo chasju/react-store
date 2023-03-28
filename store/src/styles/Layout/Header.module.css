@@ -1,19 +1,53 @@
 @import url(../Theme/Theme.module.css);
 
 header {
-  background-color: var(--accent);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(193, 188, 188);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70vw;
+  height: 100vh;
+  border-radius: 0 1rem 1rem 0;
+  z-index: 10;
+  translate: -70vw 0;
+  transition: all 0.3s ease;
+}
+
+.menu.open {
+  translate: 0;
+}
+
+.close {
+  position: absolute;
+  top: 4rem;
+  left: 2rem;
+  font-size: 2rem;
+  align-self: flex-end;
 }
 
 ul {
   display: flex;
-  padding: 0;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 12rem;
+  padding: 2rem;
 }
 
 ul li {
   list-style: none;
+  font-size: 2rem;
 }
 
 .burger,
@@ -30,6 +64,16 @@ ul li {
   margin-left: 1rem;
 }
 
+.burger i,
+.shoppingBag i {
+  font-size: 2rem;
+}
+
 .shoppingBag {
   margin-right: 1rem;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 2rem;
 }
