@@ -7,11 +7,22 @@ import { useParams } from "react-router-dom";
 import HandleLike from "./HandleLike";
 import Banner from "./DiscountBanner";
 import Reviews from "./IsReview";
+import useProductStore from "../store/CourseStore";
 
 export default function ProductPage() {
   let params = useParams();
 
   const { post, isLoading, isError } = useApiWithId(`https://api.noroff.dev/api/v1/online-shop/${params.id}`);
+
+  const addProduct = useProductStore((state) => state.addToCart);
+
+  const handleAddToCart = () => {
+    addProduct({
+      id: Math.ceil(Math.random() * 1000),
+      title: post.title,
+      price: post.discountedPrice,
+    });
+  };
 
   if (isLoading) {
     return <div className={loaderStyles.loader}></div>;
@@ -37,7 +48,9 @@ export default function ProductPage() {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.addToCart}>Add to Cart</button>
+        <button onClick={handleAddToCart} className={styles.addToCart}>
+          Add to Cart
+        </button>
         <span className={styles.heart}>
           <HandleLike />
         </span>
