@@ -1,0 +1,96 @@
+@import url(./Theme/Theme.module.css);
+
+.checkoutContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.checkoutTitle {
+  text-align: center;
+}
+
+.ul {
+  padding: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.productContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: rgb(244, 244, 244);
+  width: 100%;
+  margin: auto;
+}
+
+.imageContainer {
+  width: 100px;
+}
+
+.imageContainer img {
+  width: 100%;
+  min-width: 50px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.countContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.count {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countButton {
+  border: none;
+  background-color: unset;
+}
+
+.priceContainer {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+
+.priceContainer p {
+  margin: 0;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.newPrice {
+  color: var(--accent);
+}
+
+.trash {
+  border: none;
+  background-color: unset;
+  font-size: 1.5rem;
+  padding: 0;
+  margin-top: 1rem;
+}

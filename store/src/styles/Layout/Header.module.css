@@ -39,7 +39,7 @@ header {
   cursor: pointer;
 }
 
-ul {
+.navigation {
   display: flex;
   gap: 2rem;
   flex-direction: column;
@@ -49,7 +49,7 @@ ul {
   padding: 2rem;
 }
 
-ul li {
+.navigation li {
   list-style: none;
   font-size: 2rem;
 }

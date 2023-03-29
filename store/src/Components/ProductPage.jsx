@@ -20,7 +20,9 @@ export default function ProductPage() {
     addProduct({
       id: Math.ceil(Math.random() * 1000),
       title: post.title,
-      price: post.discountedPrice,
+      discountedPrice: post.discountedPrice,
+      oldPrice: post.price,
+      image: post.imageUrl,
     });
   };
 
