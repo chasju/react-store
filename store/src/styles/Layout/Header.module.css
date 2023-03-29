@@ -4,7 +4,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   margin-top: 2rem;
+  width: 90%;
+  max-width: 950px;
 }
 
 .menu {
@@ -33,6 +36,7 @@ header {
   left: 2rem;
   font-size: 2rem;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 ul {
@@ -58,6 +62,7 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .burger {
@@ -76,4 +81,5 @@ ul li {
 .brand {
   font-weight: 600;
   font-size: 2rem;
+  cursor: pointer;
 }

@@ -29,10 +29,12 @@ export default function Header() {
       <div className={styles.burger} onClick={toggleSidebar}>
         <i className="fa-solid fa-bars"></i>
       </div>
-      <p className={styles.brand}>STOREit</p>
+      <Link to="/">
+        <p className={styles.brand}>STOREit</p>
+      </Link>
       <div className={styles.shoppingBag}>
         <Link to="/checkout">
-          <i class="fa-solid fa-bag-shopping"></i>
+          <i className="fa-solid fa-bag-shopping"></i>
         </Link>
       </div>
     </header>
