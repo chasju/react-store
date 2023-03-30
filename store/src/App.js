@@ -4,6 +4,7 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Product";
+import Checkout from "./Pages/Checkout";
 import RouteNotFound from "./Pages/NotFound";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="product/:id" element={<Product />} />
+          <Route path="checkout" element={<Checkout />} />
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>

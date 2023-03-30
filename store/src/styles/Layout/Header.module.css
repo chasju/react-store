@@ -4,7 +4,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   margin-top: 2rem;
+  width: 90%;
+  max-width: 950px;
 }
 
 .menu {
@@ -33,9 +36,10 @@ header {
   left: 2rem;
   font-size: 2rem;
   align-self: flex-end;
+  cursor: pointer;
 }
 
-ul {
+.navigation {
   display: flex;
   gap: 2rem;
   flex-direction: column;
@@ -45,7 +49,7 @@ ul {
   padding: 2rem;
 }
 
-ul li {
+.navigation li {
   list-style: none;
   font-size: 2rem;
 }
@@ -58,6 +62,7 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .burger {
@@ -76,4 +81,5 @@ ul li {
 .brand {
   font-weight: 600;
   font-size: 2rem;
+  cursor: pointer;
 }
