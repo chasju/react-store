@@ -1,6 +1,7 @@
 import styles from "../../styles/Layout/Header.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useProductStore from "../../store/CourseStore";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,10 @@ export default function Header() {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  const { products } = useProductStore((state) => ({
+    products: state.products,
+  }));
 
   return (
     <header>
@@ -35,6 +40,7 @@ export default function Header() {
       <div className={styles.shoppingBag}>
         <Link to="/checkout">
           <i className="fa-solid fa-bag-shopping"></i>
+          <span className={products?.length > 0 ? styles.cartTotal : ""}>{products?.length > 0 ? products.length : ""}</span>
         </Link>
       </div>
     </header>
