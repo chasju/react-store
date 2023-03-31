@@ -1,6 +1,7 @@
 @import url(./Theme/Theme.module.css);
 
-.checkoutContainer {
+.checkoutContainer,
+.totalContainer {
   width: 100%;
   max-width: 500px;
   margin: auto;
@@ -92,5 +93,47 @@
   background-color: unset;
   font-size: 1.5rem;
   padding: 0;
+  margin-top: 1rem;
+}
+
+.totalContainer {
+  background-color: var(--accent-opacity);
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  margin-top: 3rem;
+}
+
+.flex,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.flex h5,
+.flex p {
+  font-size: 1rem;
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.flex:nth-child(2) h5,
+.flex:nth-child(2) p {
+  margin-bottom: auto;
+}
+
+.total h4,
+.total p {
+  font-weight: 600;
+}
+
+.checkoutButton {
+  background-color: var(--accent);
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.7rem;
   margin-top: 1rem;
 }
