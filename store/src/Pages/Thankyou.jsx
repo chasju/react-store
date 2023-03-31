@@ -2,8 +2,6 @@ import styles from "../styles/Thankyou.module.css";
 import { Link } from "react-router-dom";
 
 export default function Thankyou() {
-  console.log("hello");
-
   return (
     <div className={styles.container}>
       <h1>Thank you for your purchase</h1>

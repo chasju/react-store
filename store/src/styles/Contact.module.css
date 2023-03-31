@@ -5,7 +5,8 @@
   margin-top: 5rem;
 }
 
-.formContainer {
+.formContainer,
+.messageSent {
   display: flex;
   gap: 1.5rem;
   flex-direction: column;
@@ -13,6 +14,19 @@
   align-items: center;
   padding: 2rem;
   margin-top: 3rem;
+}
+
+.messageSent {
+  background-color: var(--accent-opacity);
+  color: #252525;
+  font-weight: 600;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.formContainer input {
+  font-family: "poppins", sans-serif;
 }
 
 .formContainer div {
@@ -40,4 +54,8 @@
   font-size: 1rem;
   border: none;
   padding: 0.7rem;
+}
+
+.errorMessage {
+  color: var(--accent);
 }
