@@ -3,8 +3,9 @@ import styles from "../styles/ProductList.module.css";
 import { Link } from "react-router-dom";
 
 export default function Total() {
-  const { products } = useProductStore((state) => ({
+  const { products, clearCart } = useProductStore((state) => ({
     products: state.products,
+    clearCart: state.clearCart,
   }));
 
   const array = [];
@@ -21,7 +22,7 @@ export default function Total() {
         <h4>Total</h4>
         <p>{total.toFixed(2)} NOK</p>
       </div>
-      <Link to="/thankyou">
+      <Link to="/thankyou" onClick={clearCart}>
         <button className={styles.checkoutButton}>CHECKOUT</button>
       </Link>
     </div>
