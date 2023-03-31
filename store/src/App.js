@@ -4,6 +4,7 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Product";
+import Thankyou from "./Pages/Thankyou";
 import Checkout from "./Pages/Checkout";
 import RouteNotFound from "./Pages/NotFound";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="thankyou" element={<Thankyou />} />
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
