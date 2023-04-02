@@ -1,0 +1,61 @@
+@import url(./Theme/Theme.module.css);
+
+.contactContainer h1 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.formContainer,
+.messageSent {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.messageSent {
+  background-color: var(--accent-opacity);
+  color: #252525;
+  font-weight: 600;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.formContainer input {
+  font-family: "poppins", sans-serif;
+}
+
+.formContainer div {
+  width: 100%;
+  max-width: 500px;
+}
+
+.formContainer div textarea {
+  width: 100%;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  padding-left: 2.5rem;
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  background-color: rgb(240, 240, 240);
+  border: 0;
+}
+
+.contactButton {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  padding: 0.7rem;
+}
+
+.errorMessage {
+  color: var(--accent);
+}
