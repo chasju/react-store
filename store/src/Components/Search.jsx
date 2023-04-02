@@ -1,7 +1,6 @@
 import styles from "../styles/Search.module.css";
 import cardStyles from "../styles/Cards.module.css";
 import errorStyles from "../styles/ErrorMessage.module.css";
-import Styles from "../styles/Theme/Theme.module.css";
 import loaderStyles from "../styles/Loader.module.css";
 import React, { useState } from "react";
 import useApi from "../API/useApi";
@@ -38,12 +37,12 @@ export default function Search() {
     <div>
       <form action="submit">
         <i className={`${styles.searchIcon} fa-solid fa-magnifying-glass`}></i>
-        <input onChange={handleChange} type="text" name="searchInput" placeholder="Search" />
+        <input onChange={handleChange} type="text" name="searchInput" placeholder="Search" autoComplete="off" />
       </form>
       <h1>Products</h1>
-      <div className={Styles.filterButtonContainer}>
+      {/* <div className={Styles.filterButtonContainer}>
         <button className={Styles.filterButton}>Filter</button>
-      </div>
+      </div> */}
       <div className={cardStyles.cardContainer}>
         {posts
           .filter((post) => {

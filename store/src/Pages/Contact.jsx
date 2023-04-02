@@ -18,6 +18,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -28,14 +29,12 @@ export default function Contact() {
   function onSubmit(data) {
     console.log(data);
     setIsVisible(true);
+    reset();
   }
 
   return (
     <div className={styles.contactContainer}>
       <h1>Contact</h1>
-      <div className={isVisible ? styles.messageSent : ""}>
-        <p>{isVisible ? "Your message was sent" : ""}</p>
-      </div>
       <div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
           <div>
@@ -57,6 +56,9 @@ export default function Contact() {
             <label htmlFor="">Your message here</label>
             <p className={styles.errorMessage}>{errors.message?.message}</p>
             <textarea {...register("message")} name="message" cols="30" rows="10"></textarea>
+          </div>
+          <div className={isVisible ? styles.messageSent : ""}>
+            <p>{isVisible ? "Your message was sent" : ""}</p>
           </div>
           <button type="submit" className={styles.contactButton}>
             Submit
