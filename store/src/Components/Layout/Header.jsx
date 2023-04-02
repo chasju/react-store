@@ -33,10 +33,14 @@ export default function Header() {
         <nav>
           <ul className={styles.navigation}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={toggleSidebar}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact" onClick={toggleSidebar}>
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
