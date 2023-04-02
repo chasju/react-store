@@ -14,6 +14,14 @@ export default function Header() {
     products: state.products,
   }));
 
+  let array = [];
+
+  products.map((product) => {
+    return array.push(product.count);
+  });
+
+  const counter = array.reduce((a, v) => (a = a + v), 0);
+
   return (
     <header>
       <div className={`${styles.menu} ${isOpen ? `${styles.open}` : ""}`}>
@@ -40,7 +48,7 @@ export default function Header() {
       <div className={styles.shoppingBag}>
         <Link to="/checkout">
           <i className="fa-solid fa-bag-shopping"></i>
-          <span className={products?.length > 0 ? styles.cartTotal : ""}>{products?.length > 0 ? products.length : ""}</span>
+          <span className={counter > 0 ? styles.cartTotal : ""}>{counter > 0 ? counter : ""}</span>
         </Link>
       </div>
     </header>

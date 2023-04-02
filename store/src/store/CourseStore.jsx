@@ -15,7 +15,6 @@ const productStore = (set, get) => ({
     const index = get().products.findIndex((prod) => prod.id === product.id);
 
     let updateProducts;
-    console.log(index);
 
     if (index !== -1) {
       const updateProduct = {
