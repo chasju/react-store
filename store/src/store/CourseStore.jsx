@@ -2,30 +2,45 @@ import { create } from "zustand";
 
 import { devtools, persist } from "zustand/middleware";
 
-const productStore = (set) => ({
+const productStore = (set, get) => ({
   products: [],
   addToCart: (product) => {
-    set((state) => ({
-      products: [product, ...state.products],
-    }));
+    // With help from Pretzl
+    const products = get().products;
+    const index = get().products.findIndex((prod) => prod.id === product.id);
+
+    let updateProducts;
+
+    if (index !== -1) {
+      const updateProduct = {
+        ...products[index],
+        count: products[index].count + 1,
+      };
+      updateProducts = [...products];
+      updateProducts[index] = updateProduct;
+    } else {
+      updateProducts = [...products, { ...product, count: 1 }];
+    }
+
+    localStorage.setItem("products", JSON.stringify(updateProducts));
+
+    set({ products: updateProducts });
   },
   removeProduct: (productId) => {
     set((state) => ({
       products: state.products.filter((product) => product.id !== productId),
     }));
   },
-  incrementProduct: (productId) => {
-    set((state) => ({
-      products: [
-        ...state.products,
+  updateCount: (productId, count) => {
+    const updatedProducts = get().products.map((product) => {
+      if (product.id === productId) {
+        return { ...product, count };
+      }
+      return product;
+    });
 
-        state.products.find((product) => {
-          console.log(product.id, productId);
-          // Tried to make this work, but didn't have time to work on it in the end.
-          return product.id === productId ? product.count + 1 : product.count;
-        }),
-      ],
-    }));
+    localStorage.setItem("products", updatedProducts);
+    set({ products: updatedProducts });
   },
   clearCart: () => set({ products: [] }),
 });

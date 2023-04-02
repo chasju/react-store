@@ -11,7 +11,9 @@ export default function Total() {
   const array = [];
 
   products.map((product) => {
-    return array.push(product.discountedPrice);
+    const total = product.discountedPrice * product.count;
+
+    return array.push(total);
   });
 
   const total = array.reduce((a, v) => (a = a + v), 0);

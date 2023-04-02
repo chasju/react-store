@@ -7,8 +7,8 @@ import { useState } from "react";
 const schema = yup
   .object({
     fullName: yup.string().min(3, "Your name must be 3 characters or longer.").required("Please enter a name"),
-    subject: yup.string().min(5, "Subject must be 5 characters or longer.").required("Please enter a subject"),
-    message: yup.string().min(1, "Message must be at least 1 characters").required("Message must be at least 1 characters"),
+    subject: yup.string().min(3, "Subject must be 3 characters or longer.").required("Please enter a subject"),
+    message: yup.string().min(3, "Message must be at least 1 characters").required("Message must be at least 1 characters"),
   })
   .shape({
     email: yup.string().email("Not a proper email").required("Please enter a valid email"),

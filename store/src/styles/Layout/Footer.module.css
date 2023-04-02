@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}

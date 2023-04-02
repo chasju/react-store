@@ -8,6 +8,7 @@ import HandleLike from "./HandleLike";
 import Banner from "./DiscountBanner";
 import Reviews from "./IsReview";
 import useProductStore from "../store/CourseStore";
+import { useState } from "react";
 
 export default function ProductPage() {
   let params = useParams();
@@ -15,10 +16,12 @@ export default function ProductPage() {
   const { post, isLoading, isError } = useApiWithId(`https://api.noroff.dev/api/v1/online-shop/${params.id}`);
 
   const addProduct = useProductStore((state) => state.addToCart);
+  const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
+    setIsAdded(true);
     addProduct({
-      id: Math.ceil(Math.random() * 1000),
+      id: post.id,
       title: post.title,
       discountedPrice: post.discountedPrice,
       oldPrice: post.price,
@@ -51,7 +54,7 @@ export default function ProductPage() {
       </div>
       <div className={styles.buttonContainer}>
         <button onClick={handleAddToCart} className={styles.addToCart}>
-          Add to Cart
+          {isAdded ? "Added to shopping cart" : "Add to Cart"}
         </button>
         <span className={styles.heart}>
           <HandleLike />

@@ -1,31 +1,43 @@
 import React, { useState } from "react";
+import useProductStore from "../store/CourseStore";
 import styles from "../styles/ProductList.module.css";
 
 export default function CartItem({ product, id, removeProduct }) {
-  const [count, setCount] = useState(1);
-  const [productTotal, setProductTotal] = useState(product.discountedPrice);
-  const [oldProductTotal, setOldProductTotal] = useState(product.oldPrice);
-  const [isDisabled, setIsDisabled] = useState(true);
+  let discountedPrice = product.discountedPrice;
+  let oldPrice = product.oldPrice;
+
+  const [count, setCount] = useState(product.count);
+  const [productTotal, setProductTotal] = useState(discountedPrice * product.count);
+  const [oldProductTotal, setOldProductTotal] = useState(oldPrice * product.count);
+  const [isDisabled, setIsDisabled] = useState(product?.count > 1 ? false : true);
+
+  const updateCount = useProductStore((state) => state.updateCount);
 
   function increment() {
-    setCount(count + 1);
-    const total = productTotal + product.discountedPrice;
-    const oldPrice = oldProductTotal + product.oldPrice;
+    const newCount = count + 1;
+    setCount(newCount);
+    updateCount(product.id, newCount);
 
-    setProductTotal(parseFloat(total.toFixed(2)));
-    setOldProductTotal(parseFloat(oldPrice.toFixed(2)));
+    const total = product.discountedPrice * newCount;
+    const oldPrice = product.oldPrice * newCount;
+
+    setProductTotal(total);
+    setOldProductTotal(oldPrice);
 
     setIsDisabled(false);
   }
 
   function decrement() {
-    setCount(count - 1);
+    const newCount = count - 1;
+    setCount(newCount);
+    updateCount(product.id, newCount);
+
     const total = productTotal - product.discountedPrice;
     const oldPrice = oldProductTotal - product.oldPrice;
-    setProductTotal(parseFloat(total.toFixed(2)));
-    setOldProductTotal(parseFloat(oldPrice.toFixed(2)));
+    setProductTotal(total);
+    setOldProductTotal(oldPrice);
 
-    count === 2 ? setIsDisabled(true) : setIsDisabled(false);
+    newCount === 1 ? setIsDisabled(true) : setIsDisabled(false);
   }
 
   return (
@@ -41,15 +53,15 @@ export default function CartItem({ product, id, removeProduct }) {
               <button disabled={isDisabled} className={styles.countButton} onClick={decrement}>
                 <i className="fa-solid fa-minus"></i>
               </button>
-              <p className={styles.count}>{count < 1 ? setCount(1) : count}</p>
+              <p className={styles.count}>{product.count}</p>
               <button className={styles.countButton} onClick={increment}>
                 <i className="fa-solid fa-plus"></i>
               </button>
             </div>
           </div>
           <div className={styles.priceContainer}>
-            <p className={styles.oldPrice}>{product.oldPrice > product.discountedPrice ? oldProductTotal + " NOK" : ""}</p>
-            <p className={styles.newPrice}>{productTotal} NOK</p>
+            <p className={styles.oldPrice}>{product.oldPrice > product.discountedPrice ? oldProductTotal.toFixed(2) + " NOK" : ""}</p>
+            <p className={styles.newPrice}>{productTotal.toFixed(2)} NOK</p>
             <button
               className={styles.trash}
               onClick={() => {
