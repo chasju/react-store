@@ -2,13 +2,8 @@ import { create } from "zustand";
 
 import { devtools, persist } from "zustand/middleware";
 
-const localStorageProducts = () => {
-  const products = localStorage.getItem("products");
-  return products ? JSON.parse(products) : [];
-};
-
 const productStore = (set, get) => ({
-  products: localStorageProducts,
+  products: [],
   addToCart: (product) => {
     // With help from Pretzl
     const products = get().products;

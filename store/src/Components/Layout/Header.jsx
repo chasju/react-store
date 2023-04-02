@@ -16,9 +16,11 @@ export default function Header() {
 
   let array = [];
 
-  products.map((product) => {
-    return array.push(product.count);
-  });
+  if (products) {
+    products.map((product) => {
+      return array.push(product.count);
+    });
+  }
 
   const counter = array.reduce((a, v) => (a = a + v), 0);
 
