@@ -19,7 +19,6 @@ On this website you should be able to:
 
 ## Built With
 
-- HTML
 - CSS modules
 - [React.js](https://legacy.reactjs.org/docs/getting-started.html)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
